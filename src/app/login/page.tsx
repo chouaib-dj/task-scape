@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -22,8 +21,9 @@ import { toast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
+import LoginButton from "./_components/login-button";
 import { login } from "./actions";
 import { DEFAULT_FORM_VALUES, LoginValues, formSchema } from "./data";
 
@@ -38,7 +38,6 @@ export default function Login() {
 
   // Initialize form state and form action
   const [state, formAction] = useFormState(login, null);
-  const { pending } = useFormStatus();
 
   // Handle state changes and display toasts for success or failure
   useEffect(() => {
@@ -96,22 +95,10 @@ export default function Login() {
               />
             </CardContent>
             <CardFooter className="pt-2">
-              <Button
-                className="w-full"
-                type="submit"
-                onClick={async (e) => {
-                  // Trigger form validation before submission
-                  const canGo = await form.trigger(["email"]);
-                  if (!canGo) {
-                    e.preventDefault();
-                    return;
-                  }
-                }}
-                disabled={!form.formState.isValid}
-                isLoading={pending}
-              >
-                Send Magic Link
-              </Button>
+              <LoginButton
+                trigger={form.trigger}
+                isValid={form.formState.isValid}
+              />
             </CardFooter>
           </Card>
         </form>
