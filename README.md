@@ -17,8 +17,10 @@ Task Scape 🎯 is an intuitive task management application that enhances produc
 
 - **Next.js:** A React framework for enhanced server-side rendering and static site generation.
 - **Supabase:** A scalable backend platform providing database and authentication solutions.
-- **dnd-kit:** A versatile drag-and-drop toolkit for React applications.
-- **shadcn/ui:** Modern React UI components designed for sleek user interfaces.
+- **TypeScript:** A statically typed superset of JavaScript for improved developer productivity and code quality.
+- **Dnd-kit:** A versatile drag-and-drop toolkit for React applications.
+- **Shadcn/ui:** Modern React UI components designed for sleek user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for creating custom designs quickly and efficiently.
 
 ## 🚀 Quick Start
 
